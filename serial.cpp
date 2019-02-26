@@ -18,15 +18,7 @@ int main()
     ifstream inFile;
     string input;
     string url;
-    inFile.open("urls.txt");
 
-    if(inFile.is_open())
-      cout << "URL file opened sucessfully ..." << endl;
-    else
-      {
-          cout << "ERROR: could not open file" << endl;
-          exit(0);
-      }
     /* The command buffer */
     string cmdBuff;
 
@@ -36,63 +28,74 @@ int main()
     /* Keep running until the user has typed "exit" */
     do
     {
-        /* Prompt the user to enter the command */
-        cerr << "cmd>";
-        cin >> cmdBuff;
+      /* Prompt the user to enter the command */
+      cerr << "cmd>";
+      cin >> cmdBuff;
 
         /* If the user wants to exit */
         if (cmdBuff != "exit")
         {
           if(cmdBuff=="wget")
           {
-            while(inFile.is_open() && getline(inFile, url))
-            {
-                /* TODO: Create a child */
-                childPid = fork();
+            inFile.open("urls.txt");
 
-                /* TODO: Error check to make sure the child was successfully created */
-                if (childPid < 0)
+              if(inFile.is_open())
+                cout << "URL file opened sucessfully ..." << endl;
+              else
                 {
-                    cout << "Fork failed";
-                }
-                else if (childPid == 0)
-                {
-
-                    cout << "\n\nThis is a child process with PID " << getpid() << endl;
-                    cout << "Child process was successfully created" << endl;
-                    cout << "URL read and passed: " << url << endl;
-                      execlp("/usr/bin/", cmdBuff.c_str(), url, NULL);
+                    cout << "ERROR: could not open file" << endl;
+                    exit(0);
                 }
 
+              while(inFile.is_open() && getline(inFile, url))
+              {
+                  /* TODO: Create a child */
+                  childPid = fork();
 
-              /*** TODO: If I am child, I will do this: ****/
-          /* Call execlp() to replace my program with that specified at the command line.
-      * PLEASE NOTE: YOU CANNOT PASS cmdBuff DIRECTLY to execlp(). It is because
-              * cmdBuff is an object of type string (i.e., a class) and execlp() expects
-          * an array of characters.  However, you can pass cmdBuff.c_str(), which will
-              * return an array of characters representation of the string object.
-              *
-              * Also, please do not forget to error check your exelp() system calls.
-              */
+                  /* TODO: Error check to make sure the child was successfully created */
+                  if (childPid < 0)
+                  {
+                      cout << "Fork failed";
+                  }
+                  else if (childPid == 0)
+                  {
+
+                      cout << "\n\nThis is a child process with PID " << getpid() << endl;
+                      cout << "Child process was successfully created" << endl;
+                      cout << "URL read and passed: " << url << endl;
+                        execlp("/usr/bin/wget", cmdBuff.c_str(), url.c_str(), NULL);
+                  }
 
 
-              /*** TODO: If I am a parent, I will do the following ***?
-              /* Wait for the child process to terminate */
+                /*** TODO: If I am child, I will do this: ****/
+            /* Call execlp() to replace my program with that specified at the command line.
+        * PLEASE NOTE: YOU CANNOT PASS cmdBuff DIRECTLY to execlp(). It is because
+                * cmdBuff is an object of type string (i.e., a class) and execlp() expects
+            * an array of characters.  However, you can pass cmdBuff.c_str(), which will
+                * return an array of characters representation of the string object.
+                *
+                * Also, please do not forget to error check your exelp() system calls.
+                */
 
-                else
-                {
-                  wait(NULL);
-                  cout << "Child complete" << endl;
-                }
-            }
+
+                /*** TODO: If I am a parent, I will do the following ***?
+                /* Wait for the child process to terminate */
+
+                  else
+                  {
+                    wait(NULL);
+                    cout << "Child complete" << endl;
+                  }
+              }
+
+              inFile.close();
+              cout << "\n\nData file closed ..." << endl;
           }
           else
             cout << "ERROR: unexpected command" << endl;
         }
 
     } while (cmdBuff != "exit");
-    inFile.close();
-    cout << "\n\nData file closed ..." << endl;
 
     return 0;
 }
