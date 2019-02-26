@@ -63,7 +63,8 @@ int main()
                       cout << "\n\nThis is a child process with PID " << getpid() << endl;
                       cout << "Child process was successfully created" << endl;
                       cout << "URL read and passed: " << url << endl;
-                        execlp("/usr/bin/wget", cmdBuff.c_str(), url.c_str(), NULL);
+
+                      execlp("/usr/bin/wget", cmdBuff.c_str(), url.c_str(), NULL);
                   }
 
 
