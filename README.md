@@ -5,9 +5,15 @@ This program is to demonstrate our knowledge of serial and parallel downloaders.
 
 # QUESTIONS
 1.) In the output of time what is the difference between real, user, and sys times?
+ - *real* time is the total elapsed time including time slices used by other processes and time the process spends blocked.
+       Typically the time we view on the clock.
+   *user* time is the CPU time spent in user-mode code (outside the kernel). User time is the only CPU time used in executing the process. 
+   *sys* time is the amount of CPU time spent in the kernel. This means executing CPU time spent in system calls within the kernel, as   
+      opposed to library code, which is still running in user-space.
 
 2.) Which is longer: user time or sys time? Use your knowledge to explain why.
-
+ - Generally, user time is longer than sys time. However, there are certain circumstances in which sys time is longer. 
+ 
 3.) When downloading the files above, which downloader finishes faster? Why do you think that is?
 
 4.) Repeat the experiment for 10 files (any reasonably large-sized files, eg 100MB)  
