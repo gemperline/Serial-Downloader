@@ -1,9 +1,9 @@
 //CPSC 351: PROJECT 1
 //TEAM: ADAM G.  &  VICTORIA T.
 
-//**INCOMPLETE**
+//**PROJECT INCOMPLETE**
 //OUTPUT: Able to read file, able to get # of url counter, but does not proceed with the rest of the download.
-// Potential issue: having 2 getLine statements
+//ISSUES:
 //If I ignore the while loop that gets the # of urls and set a default value for the num of urls (ex: urlCount=5), it will download
 //but it will download the first url and repeat the download for the same loop 
 //Also, we need a way to get the children processes to execute execlp(----) where it takes in a distinct URL from the text?
@@ -98,12 +98,18 @@ int main()
 						{
 							wait(NULL);
 							cout << "Child complete" << endl;
+							//Closes file
+						inFile.close();
+						cout << "\n Data file closed ..." << endl;
 						}
 					}
 				}
 				//Closes file
-				inFile.close();
-				cout << "\n Data file closed ..." << endl;
+				if(!inFile.close())
+				{
+					inFile.close();
+				 	cout << "\n Data file closed ..." << endl;
+				}
 			}
 			else
 			{
