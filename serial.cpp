@@ -7,6 +7,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <cstring>
 using namespace std;
 
 //SERIAL DOWNLOADER
@@ -54,10 +55,11 @@ int main()
               }
               else if (childPid == 0)
               {
+
                   cout << "\n\nThis is a child process with PID " << getpid() << endl;
                   cout << "Child process was successfully created" << endl;
                   cout << "URL read and passed: " << url << endl;
-                    execlp("/usr/bin/wget", "wget", url, NULL);
+                    execlp("/usr/bin/wget", cmdBuff.c_str(), url, NULL);
               }
 
 
@@ -82,7 +84,7 @@ int main()
               }
           }
            inFile.close();
-           cout << "Data file closed ..." << endl;
+           cout << "\n\nData file closed ..." << endl;
         }
 
     } while (cmdBuff != "exit");
