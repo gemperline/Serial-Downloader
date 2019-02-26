@@ -64,7 +64,7 @@ int main()
 
 			//Loops through file and counts the number of urls in urls.txt
   //*ISSUE HERE: This gets the number of urls in the file but i think since this has getline,
-  the other while loop will not execute **//
+ // the other while loop will not execute 
   
 				 while (getline(inFile, url))
 				{
