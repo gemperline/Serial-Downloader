@@ -78,7 +78,7 @@ int main()
 				while (inFile.is_open() && getline(inFile,url))
 				{
 					// Parent forks off the same number of children as the number of urls
-					for (int i = 0; i < 5; i++)
+					for (int i = 0; i < urlCounter; i++)
 					{
 						childPid = fork();
 
