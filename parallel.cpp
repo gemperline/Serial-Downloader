@@ -75,7 +75,7 @@ int main()
 				
 
 				//Loops through the file
-				while (inFile.is_open() && getline(inFile,url))
+				if (inFile.is_open() && getline(inFile,url))
 				{
 					// Parent forks off the same number of children as the number of urls
 					for (int i = 0; i < urlCounter; i++)
@@ -89,9 +89,10 @@ int main()
 						}
 						else if (childPid == 0)
 						{
-				cout << "Child process was successfully created" << endl;
-					cout << "URL read and passed: " << url << endl;
-				execlp("/usr/bin/wget", cmdBuff.c_str(), url.c_str(), NULL);
+						  cout << "Child process was successfully created" << endl;
+						  cout << "URL read and passed: " << url << endl;
+							//PROBLEM HERE: NEEDS TO GET DISTINCT URL AND NOT TAKE IN THE 1ST ONE
+						  execlp("/usr/bin/wget", cmdBuff.c_str(), url.c_str(), NULL);
 						}
 						//Parent process waits for all children processes to terminate
 						else
@@ -99,18 +100,19 @@ int main()
 							wait(NULL);
 							cout << "Child complete" << endl;
 							//Closes file
-						inFile.close();
-						cout << "\n Data file closed ..." << endl;
+						        inFile.close();
+						        cout << "\n Data file closed ..." << endl;
 						}
 					}
 				}
-				//Closes file
+				/*Closes file
 				if(inFile.is_open())
 				{
 					inFile.close();
 				 	cout << "\n Data file closed ..." << endl;
 				}
-			}
+				*/
+							}
 			else
 			{
 				cout << "ERROR: unexpected command" << endl;
