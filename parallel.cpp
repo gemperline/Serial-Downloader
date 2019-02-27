@@ -92,6 +92,8 @@ int main()
 						  cout << "Child process was successfully created" << endl;
 						  cout << "URL read and passed: " << url << endl;
 							//PROBLEM HERE: NEEDS TO GET DISTINCT URL AND NOT TAKE IN THE 1ST ONE
+							//Need a way to traverse through url.txt to get the distinct url
+							//potentially use an array? idk
 						  execlp("/usr/bin/wget", cmdBuff.c_str(), url.c_str(), NULL);
 						}
 						//Parent process waits for all children processes to terminate
