@@ -105,7 +105,7 @@ int main()
 					}
 				}
 				//Closes file
-				if(!inFile.close())
+				if(inFile.is_open())
 				{
 					inFile.close();
 				 	cout << "\n Data file closed ..." << endl;
