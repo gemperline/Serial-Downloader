@@ -15,6 +15,7 @@ This program is to demonstrate our knowledge of serial and parallel downloaders.
  - Generally, user time is longer than sys time. However, there are certain circumstances in which sys time is longer. 
  
 3.) When downloading the files above, which downloader finishes faster? Why do you think that is?
+ - As we ran the time program on the command line, we concluded that the parallel downloader finishes faster.  
 
 4.) Repeat the experiment for 10 files (any reasonably large-sized files, eg 100MB)  
  Is the downloader in the previous question still faster? If not so, why do you think  that is?
