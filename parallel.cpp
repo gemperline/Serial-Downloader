@@ -67,8 +67,8 @@ int main()
  // the other while loop will not execute
 
 //*****// SOLVED: close the file read after counting the lines in File
-			 // this allows the read cursor to be reset to the beginning of file when
-			 		// reopened.
+//*****// this allows the read cursor to be reset to the beginning of file when
+//*****// reopened.
 
 				 while (getline(inFile, url))
 				{
@@ -80,7 +80,7 @@ int main()
 							inFile.close();
 							cout << "\n Data file closed ..." << endl;
 
-//******// CONTINUED: reopen the file, read cursor will start at beinning
+//*****// CONTINUED: reopen the file, read cursor will start at beinning
 				inFile.open("urls.txt");
 
 					// Parent forks off the same number of children as the number of urls
@@ -107,7 +107,7 @@ int main()
 					}
 					//Parent process waits for ALL children processes to terminate
 					wait(NULL);
-					
+
 				//Closes file
 				inFile.close();
 				cout << "\n Data file closed ..." << endl;
