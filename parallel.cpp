@@ -5,7 +5,7 @@
 //OUTPUT: Able to read file, able to get # of url counter, but does not proceed with the rest of the download.
 //ISSUES:
 //If I ignore the while loop that gets the # of urls and set a default value for the num of urls (ex: urlCount=5), it will download
-//but it will download the first url and repeat the download for the same loop 
+//but it will download the first url and repeat the download for the same loop
 //Also, we need a way to get the children processes to execute execlp(----) where it takes in a distinct URL from the text?
 
 
@@ -26,28 +26,28 @@ using namespace std;
 int main()
 {
 
-	// The Input File 
+	// The Input File
 	ifstream inFile;
 	string input;
 	string url;
 	int urlCounter = 0;
 
-	// The command buffer 
+	// The command buffer
 	string cmdBuff;
-	// The ID of the child process 
+	// The ID of the child process
 	pid_t childPid;
 
 	// Keep running until the user has typed "exit"
-	do 
+	do
 	{
-		// Prompt the user to enter the command 
+		// Prompt the user to enter the command
 		cerr << "cmd>";
 		cin >> cmdBuff;
 
-		// If the user did not enter exit 
+		// If the user did not enter exit
 		if (cmdBuff != "exit")
 		{
-			// If user enters 'wget', the program will open the urls.txt 
+			// If user enters 'wget', the program will open the urls.txt
 			// and check if it was opened successfully
 			if (cmdBuff == "wget")
 			{
@@ -64,15 +64,15 @@ int main()
 
 			//Loops through file and counts the number of urls in urls.txt
   //*ISSUE HERE: This gets the number of urls in the file but i think since this has getline,
- // the other while loop will not execute 
-  
+ // the other while loop will not execute
+
 				 while (getline(inFile, url))
 				{
 					if(url.find( "http") != -1)
 					 { urlCounter++; }
 				}
 				cout << "Number of URLS: " << urlCounter << endl;
-				
+
 
 				//Loops through the file
 				if (inFile.is_open() && getline(inFile,url))
@@ -82,7 +82,7 @@ int main()
 					{
 						childPid = fork();
 
-						// Check to make sure the child was successfully created 
+						// Check to make sure the child was successfully created
 						if (childPid < 0)
 						{
 							cout << "Fork failed";
