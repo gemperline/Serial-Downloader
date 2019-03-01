@@ -16,6 +16,8 @@ This program is to demonstrate our knowledge of serial and parallel downloaders.
  
 3.) When downloading the files above, which downloader finishes faster? Why do you think that is?
  - As we ran the time program on the command line, we concluded that the parallel downloader finishes faster.  
+ - The parallel downloader completes all downloads in a quicker fashion because of its multi-process application and use of parallelism. The program has the ability to simultaneously execute processes, whereas the serial downloader has concurrency, but not parallelism.
+
 
 4.) Repeat the experiment for 10 files (any reasonably large-sized files, eg 100MB)  
  Is the downloader in the previous question still faster? If not so, why do you think  that is?
