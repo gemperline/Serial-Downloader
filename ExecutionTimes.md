@@ -2,14 +2,14 @@
 
 ## Initial Files
 
-#  Serial Downloader:
+ Serial Downloader:
   
  - real	0m12.930s
  - user	0m0.008s
  - sys	0m0.065s
 
 
- # Parallel Downloader:
+ Parallel Downloader:
   
 - real	0m8.353s
 - user	0m0.003s
