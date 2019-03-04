@@ -37,5 +37,9 @@
 # Ten Large Files
  
   Serial Downloader:
+
+ - real	0m35.680s
+ - user	0m0.090s
+ - sys	0m0.767s
   
   Parallel Downloader:
