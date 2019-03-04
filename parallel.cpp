@@ -66,64 +66,16 @@ int main()
   //*ISSUE HERE: This gets the number of urls in the file but i think since this has getline,
  // the other while loop will not execute
 
-<<<<<<< HEAD
-=======
 //*****// SOLVED: close the file read after counting the lines in File
 //*****// this allows the read cursor to be reset to the beginning of file when
 //*****// reopened.
 
->>>>>>> adamsBranch
 				 while (getline(inFile, url))
 				{
 					if(url.find( "http") != -1)
 					 { urlCounter++; }
 				}
 				cout << "Number of URLS: " << urlCounter << endl;
-<<<<<<< HEAD
-
-
-				//Loops through the file
-				if (inFile.is_open() && getline(inFile,url))
-				{
-					// Parent forks off the same number of children as the number of urls
-					for (int i = 0; i < urlCounter; i++)
-					{
-						childPid = fork();
-
-						// Check to make sure the child was successfully created
-						if (childPid < 0)
-						{
-							cout << "Fork failed";
-						}
-						else if (childPid == 0)
-						{
-						  cout << "Child process was successfully created" << endl;
-						  cout << "URL read and passed: " << url << endl;
-							//PROBLEM HERE: NEEDS TO GET DISTINCT URL AND NOT TAKE IN THE 1ST ONE
-							//Need a way to traverse through url.txt to get the distinct url
-							//potentially use an array? idk
-						  execlp("/usr/bin/wget", cmdBuff.c_str(), url.c_str(), NULL);
-						}
-						//Parent process waits for all children processes to terminate
-						else
-						{
-							wait(NULL);
-							cout << "Child complete" << endl;
-							//Closes file
-						        inFile.close();
-						        cout << "\n Data file closed ..." << endl;
-						}
-					}
-				}
-				/*Closes file
-				if(inFile.is_open())
-				{
-					inFile.close();
-				 	cout << "\n Data file closed ..." << endl;
-				}
-				*/
-							}
-=======
 				//Closes file
 							inFile.close();
 							cout << "\n Data file closed ..." << endl;
@@ -161,18 +113,12 @@ int main()
 				cout << "\n Data file closed ..." << endl;
 
 			}
->>>>>>> adamsBranch
 			else
 			{
 				cout << "ERROR: unexpected command" << endl;
 			}
 		}
-<<<<<<< HEAD
-		return 0;
-	} while (cmdBuff != "exit");
-=======
 	} while (cmdBuff != "exit");
 
 	return 0;
->>>>>>> adamsBranch
 }
