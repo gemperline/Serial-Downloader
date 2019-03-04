@@ -21,7 +21,7 @@ This program is to demonstrate our knowledge of serial and parallel downloaders.
 
 4.) Repeat the experiment for 10 files (any reasonably large-sized files, eg 100MB)  
  Is the downloader in the previous question still faster? If not so, why do you think  that is?
-  
+ - Yes the parallel downloader is still much faster as it utilizes parallelism and executes multiple processes simultaneously.
 
 # ABOUT THE PROJECT
 The *serial downloader* downloads files one at a time from the internet.
