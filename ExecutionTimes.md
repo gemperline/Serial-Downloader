@@ -43,3 +43,6 @@
  - sys	0m0.767s
   
   Parallel Downloader:
+ - real	0m14.727s
+ - user	0m0.004s
+ - sys	0m0.004s
