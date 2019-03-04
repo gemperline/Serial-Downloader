@@ -1,2 +1,10 @@
-http://releases.ubuntu.com/cosmic/ubuntu-18.10-desktop-amd64.iso
-http://releases.ubuntu.com/cosmic/ubuntu-18.10-live-server-amd64.iso
+http://ipv4.download.thinkbroadband.com/10MB.zip
+http://ipv4.download.thinkbroadband.com/10MB.zip
+http://ipv4.download.thinkbroadband.com/10MB.zip
+http://ipv4.download.thinkbroadband.com/10MB.zip
+http://ipv4.download.thinkbroadband.com/10MB.zip
+http://ipv4.download.thinkbroadband.com/10MB.zip
+http://ipv4.download.thinkbroadband.com/10MB.zip
+http://ipv4.download.thinkbroadband.com/10MB.zip
+http://ipv4.download.thinkbroadband.com/10MB.zip
+http://ipv4.download.thinkbroadband.com/10MB.zip
