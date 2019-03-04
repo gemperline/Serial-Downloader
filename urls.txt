@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 http://ipv4.download.thinkbroadband.com/10MB.zip
 http://ipv4.download.thinkbroadband.com/10MB.zip
 http://ipv4.download.thinkbroadband.com/10MB.zip
@@ -8,3 +9,7 @@ http://ipv4.download.thinkbroadband.com/10MB.zip
 http://ipv4.download.thinkbroadband.com/10MB.zip
 http://ipv4.download.thinkbroadband.com/10MB.zip
 http://ipv4.download.thinkbroadband.com/10MB.zip
+=======
+http://releases.ubuntu.com/cosmic/ubuntu-18.10-desktop-amd64.iso
+http://releases.ubuntu.com/cosmic/ubuntu-18.10-live-server-amd64.iso
+>>>>>>> 13588d4560075c094008bc7231872ca83772a9f0

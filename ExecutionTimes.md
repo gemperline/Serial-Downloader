@@ -21,16 +21,16 @@
  
  Serial Downloader:
   
- - real	78m21.592s
- - user	0m2.058s
- - sys	0m15.898s
+ - real	6m30.659s
+ - user	0m1.411s
+ - sys	21m.035s
 
   
  Parallel Downloader:
   
- - real	84m25.505s
- - user	0m2.066s
- - sys	0m11.799s
+ - real	5m6.870s
+ - user	0m0.495s
+ - sys	0m7.067s
 
   
  
