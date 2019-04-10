@@ -1,12 +1,8 @@
 //CPSC 351: PROJECT 1
 //TEAM: ADAM G.  &  VICTORIA T.
 
-//**PROJECT INCOMPLETE**
-//OUTPUT: Able to read file, able to get # of url counter, but does not proceed with the rest of the download.
-//ISSUES:
-//If I ignore the while loop that gets the # of urls and set a default value for the num of urls (ex: urlCount=5), it will download
-//but it will download the first url and repeat the download for the same loop
-//Also, we need a way to get the children processes to execute execlp(----) where it takes in a distinct URL from the text?
+// A downloader tool that will create child processes by forking. 
+// These processes result in parallel downloads from URL addresses.
 
 
 //Parallel Downloader
@@ -63,12 +59,12 @@ int main()
 				}
 
 			//Loops through file and counts the number of urls in urls.txt
-  //*ISSUE HERE: This gets the number of urls in the file but i think since this has getline,
+ // *ISSUE HERE: This gets the number of urls in the file but i think since this has getline,
  // the other while loop will not execute
 
-//*****// SOLVED: close the file read after counting the lines in File
+//*****// SOLVED: close the file read stream after counting the lines in File
 //*****// this allows the read cursor to be reset to the beginning of file when
-//*****// reopened.
+//*****// reopened.	-AG
 
 				 while (getline(inFile, url))
 				{
