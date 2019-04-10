@@ -1,7 +1,7 @@
 //CPSC 351: PROJECT 1
 //TEAM: ADAM G.  &  VICTORIA T.
 
-// A downloader tool that will create child processes by forking. 
+// A LINUX downloader tool that will create child processes by forking. 
 // These processes result in parallel downloads from URL addresses.
 
 
